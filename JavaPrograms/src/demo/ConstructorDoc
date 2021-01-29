@@ -1,0 +1,22 @@
+Constructor: special type of method used for initializing the object.
+It is called when the instance of an class is created.
+When constructor is called, memory for the object is allocated.
+
+It is not compulsion to create a constructor because java compiler creates a default constructor when an object is created.
+
+Create a constructor:
+
+Rules: 1. constructor's name should be same as class name.
+2. constructor don't have return types.
+3. constructor cannot be static, final, abstract.
+
+for e.g. If my classname is Person, then constructor would look like:
+
+Person()
+{
+	body of the constructor;
+}
+
+Two types:
+	Default constructor (without parameters)
+	Parameterized constructor

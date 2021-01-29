@@ -1,0 +1,103 @@
+super keyword : reference variable which refers to the superclass's variables, methods , constructors.
+super()
+
+final keyword: finalize a variable or a method or a class.
+
+final with a variable: variable value cannot be changed throughout the program as well as in the derived classes.
+
+final with function: method cannot be overridden.
+
+Practice:
+
+Create a interface named "Bank"
+	data members:
+		bankName = "LightHouse";
+		branchName = "Hadapsar";
+		
+	member methods:
+		void showBankInfo();
+		
+		
+Create a class named "Loan"
+	data members:
+		final loanScheme;
+		final rateOfInterest;
+		interestAmt;
+		totalLoanAmt;
+		loanAmt;
+		tenure;
+		
+	member methods:
+	
+		final void calcLoanAmt(double la, int t)
+		{
+			interestAmt = la * rateOfInterest;
+			totalLoanAmt = (loanAmt + interestAmt) * t;
+		}
+
+	for e.g. 
+	loanAmt : 10
+	roi = 20%
+	tenure = 2 month : in month
+	
+	interestAmt = loanAmt * (20/100) = Rs. 2
+	totalLoanAmt = (loanAmt + interestAmt) * tenure
+	
+
+Create a class named "AccountHolder"
+	data members:
+		accHolderName;
+		accHolderAddr;
+		accountType;
+		accountNo;
+		balance;
+		
+	member method:
+		public void showBankInfo(){}		//implemented method of interface Bank
+		void showAccHolderInfo();
+		void showLoanInfo();
+	
+
+e.g.
+		John took a loan of Rs.1000 with 20% interest rate for 1 year.
+		Display the total loan amt of john with all details.
+		
+		AccountHolder inherits Loan
+		ah1.loanAmt = 1000;
+		ah1.tenure = 12;
+		
+		ah1.calcLoan(ah1.loanAmt, ah1.tenure);
+			
+While applying inheritance:
+	Bank  Loan  AccountHolder	
+	
+	Loan extends Bank
+	AccountHolder extends Loan	
+	
+	
+	Bank	Loan : base class
+	AccountHolder : derived class from Bank & Loan
+	
+	Above inheritance is Multiple Inheritance.
+	Java implements Multiple Inheritance using Interface.
+	
+-----------------------------------------------------------------------------------------------------------------
+
+If a class is Abstract class:
+	Both abstract as well as normal functions.
+	
+Interface:
+	methods : by default abstract methods i.e method with no body.
+	data members : static, final, public
+
+	
+	interface DemoInterface
+	{
+		int num = 2;	//final, static, public
+		
+		void fun();		//declared as abstract method by default without using "abstract" keyword
+		
+		void fun1()		//throws an error as body is defined.
+		{
+		}
+	}
